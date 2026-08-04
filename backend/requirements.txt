@@ -79,3 +79,4 @@ python-dotenv
 fastapi
 trafilatura
 googlenewsdecoder
+wordcloud
