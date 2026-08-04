@@ -1,0 +1,35 @@
+{
+  "trained": true,
+  "trained_on": "golden_dataset.csv (label manusia asli, lewat evaluate_manual.py)",
+  "n_train": 234,
+  "n_test": 59,
+  "accuracy": 0.6949152542372882,
+  "precision": 0.6919929865575687,
+  "recall": 0.6949152542372882,
+  "f1": 0.6916292271510827,
+  "confusion_matrix": [
+    [
+      8,
+      2,
+      3
+    ],
+    [
+      3,
+      12,
+      5
+    ],
+    [
+      1,
+      4,
+      21
+    ]
+  ],
+  "labels": [
+    "Negatif",
+    "Netral",
+    "Positif"
+  ],
+  "train_size": 234,
+  "test_size": 59,
+  "note": "Metrik ini dihitung dari held-out test set berisi 59 label manusia asli (bukan lexicon). Model dilatih ulang tiap kali golden_dataset.csv bertambah — jalankan ulang train_model.py setelah menambah label baru, lalu restart backend."
+}
