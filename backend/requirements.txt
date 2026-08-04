@@ -77,3 +77,4 @@ transformers
 torch
 python-dotenv
 fastapi
+trafilatura
