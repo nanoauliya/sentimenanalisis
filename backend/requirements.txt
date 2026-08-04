@@ -76,3 +76,4 @@ gensim
 transformers
 torch
 python-dotenv
+fastapi
