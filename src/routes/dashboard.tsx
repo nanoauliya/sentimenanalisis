@@ -87,7 +87,7 @@ export const Route = createFileRoute("/dashboard")({
 });
 
 // Ganti ini kalau backend jalan di alamat/port lain.
-const API_BASE = "http://localhost:8000";
+const API_BASE = "sentimenanalisis-production.up.railway.app";
 
 const BRAND = {
   p50: "#EEF5FF",
