@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import {
   Search,
   Calendar,
@@ -87,7 +88,7 @@ export const Route = createFileRoute("/dashboard")({
 });
 
 // Ganti ini kalau backend jalan di alamat/port lain.
-const API_BASE = "https://sentimenanalisis-production.up.railway.app";
+const API_BASE = "http://localhost:8000";
 
 const BRAND = {
   p50: "#EEF5FF",
@@ -496,11 +497,16 @@ function DashboardPage() {
       <header className="border-b border-border/60 bg-white/70 backdrop-blur sticky top-0 z-30">
         <div className="mx-auto max-w-[1400px] px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
+            <Link to="/">
+              <Button variant="outline" size="icon" className="h-9 w-9 shrink-0">
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+            </Link>
             <div>
               <h1 className="text-lg font-bold tracking-tight text-[color:var(--brand-700)]">
-                Sentiment Analysis Dashboard
+                Monitoring Berita dan Analisis Opini
               </h1>
-              <p className="text-xs text-muted-foreground">Analisis Berita &amp; Isu Ekonomi</p>
+              <p className="text-xs text-muted-foreground">Analisis Berita &amp; Opini Ekonomi</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
