@@ -77,7 +77,7 @@ const FEATURES = [
   {
     icon: Brain,
     title: "Klasifikasi Support Vector Machine (SVM)",
-    desc: "Mengklasifikasikan sentimen berita menjadi positif, negatif, dan netral. Performa dievaluasi menggunakan akurasi, presisi, recall, dan F1-score.",
+    desc: "Mengklasifikasikan sentimen berita menjadi positif, negatif, dan netral. Performa dievaluasi berdasarkan akurasi, presisi, recall, dan F1-score.",
   },
   {
     icon: BarChart3,
@@ -121,6 +121,11 @@ function LandingPage() {
             />
             <img
               src={logo}
+              alt="Logo SentimenDIY"
+              className="h-9 w-auto shrink-0 object-contain sm:h-10.5"
+            />
+            <img
+              src={diy}
               alt="Logo SentimenDIY"
               className="h-9 w-auto shrink-0 object-contain sm:h-10.5"
             />
