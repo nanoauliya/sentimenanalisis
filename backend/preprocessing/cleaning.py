@@ -8,7 +8,23 @@ STOPWORDS = set(stopword_factory.get_stop_words())
 EXTRA_STOPWORDS = {
     "kompas", "detik", "antara", "cnbc", "cnn", "tempo", "liputan", "liputan6",
     "com", "co", "id", "news", "portal", "resmi", "pemprov", "kementerian",
-    "wib", "jakarta"
+    "wib", "jakarta","nol","satu","dua","tiga","empat","lima","enam","tujuh",
+    "delapan","sembilan","sepuluh","belas","puluh","ratus","ribu","juta","miliar",
+    "triliun","2023","2024","2025","2026","1","2","3","4","5","6","7","8","9","0",
+    "persen","per","rp","rupiah","usd","dolar","miliar","triliun","kali","unit",
+    "hari","tanggal","pekan","minggu","bulan","tahun","januari","februari","maret",
+    "april","mei","juni","juli","agustus","september","oktober","november","desember",
+    "kemarin","besok","hariini","lalu","kini","saat","jakarta","indonesia","nasional","global",
+    "daerah","wilayah","provinsi","kabupaten","kota","kata","ujar","ungkap","jelas","sebut",
+    "tutur","terang","menurut","ucap","imbuh","papar","tegas","lanjut","yakni","yaitu","adapun",
+    "sementara","detikcom","detik","kompas","tempo","cnn","antara","kontan","bisnis","kumparan",
+    "tribun","cnbc","republika","okezone","liputan6","jpnn","mediaindonesia","com","co","id","news",
+    "foto","gambar","ilustrasi","dok","dokumentasi","grafik","jadi","masih","sudah","telah","akan",
+    "sedang","lebih","hingga","mulai","turut","atas","bawah","tersebut","terhadap","dalam","kepada","oleh",
+    "guna","agar","karena","sehingga","namun","bahkan","selain","sementara","masing","yakni","angka",
+    "jumlah","nilai","data","hasil","informasi","program","kegiatan","upaya","langkah","kondisi",
+    "proses","sektor","bidang","masyarakat","warga","pihak","orang","pelaku","perusahaan","pemerintah",
+    "kementerian","menteri","presiden","bank","indonesia","badan","pusat","statistik","bps"
 }
 STOPWORDS |= EXTRA_STOPWORDS
 
