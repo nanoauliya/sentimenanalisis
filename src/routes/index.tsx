@@ -179,10 +179,10 @@ function LandingPage() {
                 Mulai Analisis <ArrowRight className="h-4 w-4" />
               </Link>
               <a
-                href="#fitur"
+                href="#tutorial"
                 className="inline-flex items-center gap-2 rounded-full bg-card px-6 py-3 text-sm font-semibold text-foreground ring-1 ring-border transition-transform hover:scale-[1.03]"
               >
-                Pelajari Fitur
+                Lihat Tutorial
               </a>
             </div>
           </div>
