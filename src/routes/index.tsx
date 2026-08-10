@@ -57,15 +57,6 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const REGIONS = [
-  { src: diy, alt: "Lambang Daerah Istimewa Yogyakarta", name: "DI Yogyakarta" },
-  { src: jogjakota, alt: "Lambang Kota Yogyakarta", name: "Kota Yogyakarta" },
-  { src: sleman, alt: "Lambang Kabupaten Sleman", name: "Sleman" },
-  { src: bantul, alt: "Lambang Kabupaten Bantul", name: "Bantul" },
-  { src: kulonprogo, alt: "Lambang Kabupaten Kulon Progo", name: "Kulon Progo" },
-  { src: gunungkidul, alt: "Lambang Kabupaten Gunungkidul", name: "Gunungkidul" },
-];
-
 const MOCK_BARS = [42, 58, 35, 72, 50, 88, 64, 79, 46, 92, 61, 74];
 
 const FEATURES = [
@@ -201,30 +192,6 @@ function LandingPage() {
                 className="h-auto w-full object-cover"
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Cakupan wilayah — logo sejajar */}
-      <section id="wilayah" className="relative border-y border-border bg-card/80">
-        <div className="mx-auto max-w-6xl px-5 py-9">
-          <div className="mt-6 flex flex-wrap items-end justify-center gap-3 sm:gap-5">
-            {REGIONS.map((r) => (
-              <div
-                key={r.name}
-                className="group flex w-[92px] flex-col items-center gap-2 rounded-2xl bg-card px-2.5 py-3 ring-1 ring-border transition-all hover:-translate-y-1.5 hover:shadow-[0_22px_45px_-25px_rgba(54,116,181,0.7)] sm:w-[120px]"
-              >
-                <img
-                  src={r.src}
-                  alt={r.alt}
-                  className="h-12 w-12 object-contain transition-transform group-hover:scale-110 sm:h-16 sm:w-16"
-                  loading="lazy"
-                />
-                <span className="text-center text-[10px] font-semibold leading-tight text-muted-foreground sm:text-[11px]">
-                  {r.name}
-                </span>
-              </div>
-            ))}
           </div>
         </div>
       </section>
