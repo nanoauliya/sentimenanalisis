@@ -329,20 +329,16 @@ function LandingPage() {
         <Accordion type="single" collapsible className="mt-8">
           {[
             {
-              q: "Datanya dari mana?",
-              a: "Artikel diambil dari agregator Google News yang memuat portal berita nasional maupun media lokal DIY. Pengambilan disaring berdasarkan kata kunci (misal inflasi, pangan, daya beli) dan rentang periode yang kamu pilih, lalu artikel duplikat dihapus.",
+              q: "Dari mana data berita diperoleh?",
+              a: "Data berita diperoleh dari Google News yang memuat berbagai portal berita nasional. Pencarian dilakukan berdasarkan kata kunci dan rentang waktu yang dipilih, kemudian artikel yang terduplikasi akan disaring sebelum dianalisis.",
             },
             {
-              q: "Seberapa akurat klasifikasi sentimennya?",
-              a: "Pada data uji, model mencapai akurasi sekitar 92% dengan F1-score seimbang antar kelas. Metrik lengkap beserta confusion matrix bisa dilihat di tab Validasi Model pada dasbor, sehingga kamu bisa menilai sendiri keandalannya.",
+              q: "Seberapa akurat hasil klasifikasi sentimennya?",
+              a: "Berdasarkan pengujian pada data uji, model mencapai akurasi sekitar 78% dengan performa yang relatif seimbang pada setiap kelas sentimen. Detail metrik evaluasi dan confusion matrix tersedia pada tab Validasi Model untuk membantu melihat performa model secara lebih menyeluruh.",
             },
             {
-              q: "Bisa diekspor ke Excel?",
-              a: "Bisa. Hasil analisis dapat diunduh sebagai CSV/Excel berisi judul, tanggal, sumber, label sentimen, dan topik, serta laporan ringkas untuk kebutuhan presentasi.",
-            },
-            {
-              q: "Berapa banyak berita yang bisa dianalisis sekali jalan?",
-              a: "Hingga 1.000 artikel per periode. Jumlahnya dapat kamu atur di panel Input Pencarian sesuai kebutuhan dan waktu proses.",
+              q: "Apakah hasil analisis dapat diekspor?",
+              a: "Bisa. Hasil analisis dapat diunduh sebagai CSV/Excel mencakup informasi berita seperti judul, tanggal, sumber, label sentimen, dan topik, serta dapat digunakan untuk dokumentasi maupun kebutuhan analisis dan pelaporan.",
             },
           ].map((f, i) => (
             <AccordionItem key={f.q} value={`faq-${i}`}>
