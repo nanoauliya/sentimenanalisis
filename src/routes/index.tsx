@@ -325,7 +325,7 @@ function LandingPage() {
 
       <footer className="text-center text-xs text-muted-foreground py-6">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-1 px-5 py-8 text-center text-xs text-muted-foreground">
-          <span>© {new Date().getFullYear()} · Daerah Istimewa Yogyakarta</span>
+          <span>© {new Date().getFullYear()} · Kantor Perwakilan Bank Indonesia Daerah Istimewa Yogyakarta</span>
           <span>Developed by Fiki Vania Arun Fadila &amp; Ananda Auliya Rahma</span>
         </div>
       </footer>
