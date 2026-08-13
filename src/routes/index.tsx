@@ -37,6 +37,7 @@ import mockup from "@/assets/mockup.png";
 import logo from "@/assets/logo.png";
 import BI_Logo from "@/assets/BI_Logo.png";
 import tutorialVideo from "@/assets/tutorial.mp4";
+import cover from "@assets/cover.jpeg"
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
@@ -460,7 +461,7 @@ function LandingPage() {
             <video
               src={tutorialVideo}
               controls
-              poster={logo}
+              poster={cover}
               className="h-full w-full object-cover"
             >
               Browser kamu tidak mendukung tag video.
