@@ -48,7 +48,7 @@ DIRECTIONAL_UP = {"naik", "tingkat", "lonjak", "kuat", "lambung"}
 #   merosot   -> merosot    (tidak berubah)
 #   melemah   -> lemah
 #   melambat  -> lambat
-DIRECTIONAL_DOWN = {"turun", "anjlok", "merosot", "lemah", "lambat","susut","tajam","jatuh","landai"}
+DIRECTIONAL_DOWN = {"turun", "anjlok", "merosot", "lemah", "lambat","susut","tajam","jatuh","landai","krisis","gagal"}
 
 # Kata SIFAT statis (deskripsi kondisi, bukan pergerakan) -- semua sudah
 # bentuk dasar jadi stem-nya sama persis.
