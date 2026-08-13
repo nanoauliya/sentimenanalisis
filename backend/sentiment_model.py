@@ -73,7 +73,17 @@ def classify_dataframe(df, tokens_column="tokens_stemmed", text_column="text_fin
     df = df.copy()
 
     if _model is not None and _vectorizer is not None:
-        X = _vectorizer.transform(df[text_column])
+        from scipy.sparse import hstack, csr_matrix
+        import numpy as np
+        from directional_lexicon import score_directional_patterns
+
+        X_tfidf = _vectorizer.transform(df[text_column])
+        dir_scores = np.array(
+            [score_directional_patterns(t.split())[0] for t in df[text_column]],
+            dtype=float,
+        ).reshape(-1, 1)
+        X = hstack([X_tfidf, csr_matrix(dir_scores)]).tocsr()
+
         y_pred = _model.predict(X)
         proba = _model.predict_proba(X)
         class_index = {c: i for i, c in enumerate(_model.classes_)}
