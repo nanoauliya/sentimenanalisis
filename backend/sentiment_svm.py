@@ -121,6 +121,11 @@ def _skor_lexicon(tokens, text_final):
             matched_weights.append(weight)
 
     total_skor = sum(matched_weights)
+
+    # Tambahan skor dari directional patterns
+    directional_score = score_directional_patterns(tokens)
+    total_skor += directional_score
+
     jumlah_match = len(matched_weights)
     return total_skor, jumlah_match
 
