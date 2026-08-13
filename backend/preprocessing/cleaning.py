@@ -10,7 +10,7 @@ EXTRA_STOPWORDS = {
     "com", "co", "id", "news", "portal", "resmi", "pemprov", "kementerian",
     "wib", "jakarta","nol","satu","dua","tiga","empat","lima","enam","tujuh",
     "delapan","sembilan","sepuluh","belas","puluh","ratus","ribu","juta","miliar",
-    "triliun","2023","2024","2025","2026","1","2","3","4","5","6","7","8","9","0","00","000","0000","00000","000000","0000000",00000000","000000000","0000000000",
+    "triliun","2023","2024","2025","2026","1","2","3","4","5","6","7","8","9","0","00","000","0000","00000","000000","0000000","00000000","000000000","0000000000",
     "persen","per","rp","rupiah","usd","dolar","miliar","triliun","kali","unit",
     "hari","tanggal","pekan","minggu","bulan","tahun","januari","februari","maret",
     "april","mei","juni","juli","agustus","september","oktober","november","desember",
