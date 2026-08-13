@@ -88,7 +88,7 @@ export const Route = createFileRoute("/dashboard")({
 });
 
 // Ganti ini kalau backend jalan di alamat/port lain.
-const API_BASE = "https://sentimenanalisis-production.up.railway.app";
+const API_BASE = "http://localhost:8000";
 
 const BRAND = {
   p50: "#EEF5FF",
@@ -268,8 +268,9 @@ interface JobStatusResponse {
 }
 
 function DashboardPage() {
-  const currentYear = 2026;
-  const [month, setMonth] = useState("Juli");
+  const currentYear = new Date().getFullYear();
+  const currentMonthIndex = new Date().getMonth();
+  const [month, setMonth] = useState(MONTHS[currentMonthIndex]);
   const [year, setYear] = useState(String(currentYear));
   const [keyword, setKeyword] = useState("Inflasi");
   const [count, setCount] = useState<number[]>([100]);
@@ -743,7 +744,6 @@ function DashboardPage() {
               <TabsList className="bg-white border border-border">
                 <TabsTrigger value="viz">Visualisasi</TabsTrigger>
                 <TabsTrigger value="topics">Topik (LDA)</TabsTrigger>
-                <TabsTrigger value="validation">Validasi Model</TabsTrigger>
                 <TabsTrigger value="news">Berita &amp; Ringkasan</TabsTrigger>
               </TabsList>
 
@@ -1050,174 +1050,6 @@ function DashboardPage() {
                     )}
                   </CardContent>
                 </Card>
-              </TabsContent>
-
-              {/* Validation */}
-              <TabsContent value="validation" className="space-y-6">
-                {!validation || !validation.trained ? (
-                  <Card className="shadow-sm">
-                    <CardContent className="py-10 text-center text-sm text-muted-foreground">
-                      {validation?.note ?? "Belum ada hasil evaluasi model untuk analisis ini."}
-                    </CardContent>
-                  </Card>
-                ) : (
-                  <>
-                    <div className="flex items-start gap-2 text-xs text-muted-foreground bg-muted/40 border border-border rounded-lg px-3 py-2">
-                      <AlertTriangle className="h-3.5 w-3.5 shrink-0 mt-0.5" />
-                      {validation.note}
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                      {[
-                        {
-                          label: "Accuracy",
-                          val: validation.accuracy,
-                          desc: (v: number) =>
-                            `Akurasi adalah persentase jumlah prediksi yang benar dari seluruh data yang diuji. Nilai akurasi ${(
-                              v * 100
-                            )
-                              .toFixed(1)
-                              .replace(
-                                ".",
-                                ",",
-                              )}% menunjukkan bahwa model berhasil mengklasifikasikan ${(v * 100)
-                              .toFixed(1)
-                              .replace(".", ",")}% berita dengan benar.`,
-                        },
-                        {
-                          label: "Precision",
-                          val: validation.precision,
-                          desc: (v: number) =>
-                            `Precision adalah persentase prediksi positif yang benar dibandingkan dengan seluruh data yang diprediksi positif oleh model. Nilai precision ${(
-                              v * 100
-                            )
-                              .toFixed(1)
-                              .replace(
-                                ".",
-                                ",",
-                              )}% berarti dari seluruh berita yang diprediksi positif, sekitar ${(
-                              v * 100
-                            )
-                              .toFixed(1)
-                              .replace(".", ",")}% di antaranya benar-benar positif `,
-                        },
-                        {
-                          label: "Recall",
-                          val: validation.recall,
-                          desc: (v: number) =>
-                            `Recall adalah persentase data yang sebenarnya termasuk dalam suatu kelas dan berhasil dikenali dengan benar oleh model. Nilai recall ${(
-                              v * 100
-                            )
-                              .toFixed(1)
-                              .replace(".", ",")}% berarti model berhasil menemukan ${(v * 100)
-                              .toFixed(1)
-                              .replace(
-                                ".",
-                                ",",
-                              )}% dari seluruh berita yang sebenarnya termasuk dalam kelas tersebut.`,
-                        },
-                        {
-                          label: "F1-Score",
-                          val: validation.f1,
-                          desc: (v: number) =>
-                            `F1-Score adalah nilai yang menggambarkan keseimbangan antara Precision dan Recall dalam mengukur kinerja model. Nilai F1-Score ${(
-                              v * 100
-                            )
-                              .toFixed(1)
-                              .replace(
-                                ".",
-                                ",",
-                              )}% menunjukkan bahwa kemampuan model dalam menghasilkan prediksi yang tepat dan menemukan data yang relevan masih berada pada tingkat ${(v * 100).toFixed(1).replace(".", ",")}%.`,
-                        },
-                      ].map((m) => {
-                        const tone = getMetricTone(m.val);
-                        return (
-                          <Card key={m.label} className="shadow-sm">
-                            <CardContent className="p-5">
-                              <div className="flex items-center justify-between">
-                                <div className="text-xs uppercase font-semibold tracking-wide text-muted-foreground">
-                                  {m.label}
-                                </div>
-                              </div>
-                              <div className={`text-3xl font-bold mt-2 ${tone.text}`}>
-                                {m.val !== null ? `${(m.val * 100).toFixed(1)}%` : "-"}
-                              </div>
-                              <Progress
-                                value={m.val !== null ? m.val * 100 : 0}
-                                className="h-1.5 mt-3"
-                                style={{ ["--progress-fill" as any]: tone.bar }}
-                              />
-                              {m.val !== null && (
-                                <p className="text-xs text-muted-foreground leading-relaxed mt-3">
-                                  {m.desc(m.val)}
-                                </p>
-                              )}
-                            </CardContent>
-                          </Card>
-                        );
-                      })}
-                    </div>
-
-                    <Card className="shadow-sm">
-                      <CardHeader>
-                        <CardTitle className="text-base">Confusion Matrix</CardTitle>
-                        <CardDescription>
-                          Model: SVM (TF-IDF) · data uji: {validation.test_size ?? "-"} berita, data
-                          latih: {validation.train_size ?? "-"} berita.
-                        </CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        {validation.confusion_matrix && validation.labels && (
-                          <>
-                            <div className="overflow-hidden rounded-xl border border-border">
-                              <table className="w-full text-sm">
-                                <thead>
-                                  <tr style={{ background: BRAND.p50 }}>
-                                    <th className="p-3 text-left font-semibold"></th>
-                                    {validation.labels.map((l) => (
-                                      <th key={l} className="p-3 font-semibold">
-                                        Pred: {l}
-                                      </th>
-                                    ))}
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  {validation.confusion_matrix.map((row, i) => (
-                                    <tr key={i} className="border-t border-border">
-                                      <td className="p-3 font-semibold bg-[color:var(--brand-50)]/60">
-                                        Aktual: {validation.labels![i]}
-                                      </td>
-                                      {row.map((v, j) => {
-                                        const isDiag = i === j;
-                                        return (
-                                          <td key={j} className="p-3 text-center font-mono">
-                                            <span
-                                              className="inline-block min-w-[3rem] px-3 py-1 rounded-md font-semibold"
-                                              style={{
-                                                background: isDiag ? BRAND.p700 : BRAND.p50,
-                                                color: isDiag ? "white" : BRAND.p700,
-                                              }}
-                                            >
-                                              {v}
-                                            </span>
-                                          </td>
-                                        );
-                                      })}
-                                    </tr>
-                                  ))}
-                                </tbody>
-                              </table>
-                            </div>
-
-                            <ConfusionMatrixLegend
-                              matrix={validation.confusion_matrix}
-                              labels={validation.labels}
-                            />
-                          </>
-                        )}
-                      </CardContent>
-                    </Card>
-                  </>
-                )}
               </TabsContent>
 
               {/* News */}
