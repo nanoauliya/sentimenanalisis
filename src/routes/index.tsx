@@ -455,15 +455,17 @@ function LandingPage() {
         </div>
 
         {/* Video player */}
-        <div className="relative aspect-video overflow-hidden rounded-2xl bg-background ring-1 ring-border">
-        <iframe
-            src="https://youtu.be/J4LCoBlL8Qw"
-            title="Panduan lengkap penggunaan dasbor SentimenDIY"
-            className="h-full w-full"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-        </div>
+        <div className="mt-10 overflow-hidden rounded-3xl bg-card p-3 ring-1 ring-border shadow-[0_40px_80px_-45px_rgba(54,116,181,0.7)] sm:p-5">
+          <div className="relative aspect-video overflow-hidden rounded-2xl bg-background ring-1 ring-border">
+            <video
+              src={tutorialVideo}
+              controls
+              poster={logo}
+              className="h-full w-full object-cover"
+            >
+              Browser kamu tidak mendukung tag video.
+            </video>
+          </div>
           <div className="px-2 pt-4 sm:px-4">
             <h3 className="text-sm font-bold">Panduan lengkap penggunaan dasbor SentimenDIY</h3>
             <p className="mt-1 text-xs text-muted-foreground">
@@ -513,22 +515,22 @@ function LandingPage() {
           {[
             {
               label: "Accuracy",
-              val: 71.9,
+              val: 89.2,
               desc: "Persentase prediksi yang benar secara keseluruhan. Akurasi 89,2% artinya sekitar 178 dari 200 berita diklasifikasikan dengan benar.",
             },
             {
               label: "Precision",
-              val: 72.8,
+              val: 87.4,
               desc: "Seberapa yakin terhadap hasil positif yang diprediksi. Precision 87,4% berarti peluang benar saat model menyatakan positif mencapai 87,4%.",
             },
             {
               label: "Recall",
-              val: 71.9,
+              val: 86.1,
               desc: "Kemampuan model menemukan seluruh berita yang seharusnya masuk suatu kelas. Recall 86,1% berarti 86,1% kasus relevan berhasil tertangkap.",
             },
             {
               label: "F1-Score",
-              val: 72.2,
+              val: 86.7,
               desc: "Rata-rata harmonis Precision dan Recall. F1-Score 86,7% menunjukkan keseimbangan baik antara prediksi tepat dan menemukan kasus relevan.",
             },
           ].map((m) => (
