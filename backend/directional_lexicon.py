@@ -64,6 +64,7 @@ NEGATIVE_IF_UP = {
     "kriminal", "jahat", "celaka", "korupsi", "polusi",
     "macet", "bunga", "tarif", "beban", "biaya", "pajak", "ongkos",
     "krisis", "rugi", "phk", "curi", "tipu", "senjang", "tekan", "tunggak",
+    "tajam","lonjak",
 }
 
 # Entitas yang kalau NAIK/TINGGI -> berita baik (dan TURUN/RENDAH -> buruk)
