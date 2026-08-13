@@ -48,7 +48,7 @@ DIRECTIONAL_UP = {"naik", "tingkat", "lonjak", "kuat", "lambung"}
 #   merosot   -> merosot    (tidak berubah)
 #   melemah   -> lemah
 #   melambat  -> lambat
-DIRECTIONAL_DOWN = {"turun", "anjlok", "merosot", "lemah", "lambat"}
+DIRECTIONAL_DOWN = {"turun", "anjlok", "merosot", "lemah", "lambat","susut","tajam","jatuh","landai"}
 
 # Kata SIFAT statis (deskripsi kondisi, bukan pergerakan) -- semua sudah
 # bentuk dasar jadi stem-nya sama persis.
@@ -64,7 +64,7 @@ NEGATIVE_IF_UP = {
     "kriminal", "jahat", "celaka", "korupsi", "polusi",
     "macet", "bunga", "tarif", "beban", "biaya", "pajak", "ongkos",
     "krisis", "rugi", "phk", "curi", "tipu", "senjang", "tekan", "tunggak",
-    "tajam","lonjak",
+    "lonjak",
 }
 
 # Entitas yang kalau NAIK/TINGGI -> berita baik (dan TURUN/RENDAH -> buruk)
