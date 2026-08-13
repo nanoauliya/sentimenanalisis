@@ -37,7 +37,7 @@ import mockup from "@/assets/mockup.png";
 import logo from "@/assets/logo.png";
 import BI_Logo from "@/assets/BI_Logo.png";
 import tutorialVideo from "@/assets/tutorial.mp4";
-import cover from "@assets/cover.jpeg"
+import cover from "@/assets/cover.jpeg"
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
