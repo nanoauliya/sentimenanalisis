@@ -455,17 +455,15 @@ function LandingPage() {
         </div>
 
         {/* Video player */}
-        <div className="mt-10 overflow-hidden rounded-3xl bg-card p-3 ring-1 ring-border shadow-[0_40px_80px_-45px_rgba(54,116,181,0.7)] sm:p-5">
-          <div className="relative aspect-video overflow-hidden rounded-2xl bg-background ring-1 ring-border">
-            <video
-              src={tutorialVideo}
-              controls
-              poster={logo}
-              className="h-full w-full object-cover"
-            >
-              Browser kamu tidak mendukung tag video.
-            </video>
-          </div>
+        <div className="relative aspect-video overflow-hidden rounded-2xl bg-background ring-1 ring-border">
+        <iframe
+            src="https://youtu.be/J4LCoBlL8Qw"
+            title="Panduan lengkap penggunaan dasbor SentimenDIY"
+            className="h-full w-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
           <div className="px-2 pt-4 sm:px-4">
             <h3 className="text-sm font-bold">Panduan lengkap penggunaan dasbor SentimenDIY</h3>
             <p className="mt-1 text-xs text-muted-foreground">
