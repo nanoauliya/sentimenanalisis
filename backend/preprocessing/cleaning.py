@@ -24,7 +24,12 @@ EXTRA_STOPWORDS = {
     "guna","agar","karena","sehingga","namun","bahkan","selain","sementara","masing","yakni","angka",
     "jumlah","nilai","data","hasil","informasi","program","kegiatan","upaya","langkah","kondisi",
     "proses","sektor","bidang","masyarakat","warga","pihak","orang","pelaku","perusahaan","pemerintah",
-    "kementerian","menteri","presiden","bank","indonesia","badan","pusat","statistik","bps"
+    "kementerian","menteri","presiden","bank","indonesia","badan","pusat","statistik","bps","serta", "beri", 
+    "perlu", "bagi", "baca", "terus", "pilih", "kulon", "progo", "tetap", "salah", "ada", "bukan", "ikut", 
+    "berita", "terima", "sama", "lalu", "bagai", "siap", "lanjut", "rupa", "alami", "akibat", "bangun", "butuh", 
+    "hektare", "picu", "salur", "kalau", "tak", "dasar", "dapat", "hadap", "tengah", "tangan", "jawa", "kait", 
+    "daerah", "liter", "penuh", "camat", "copyright", "awal", "selesai", "dinas", "pasti", "kalsel", "gunungkidul", 
+    "gunung", "kidul", "kota", "selatan", "utara", "barat", "timur", "wetan", "lor"
 }
 STOPWORDS |= EXTRA_STOPWORDS
 
