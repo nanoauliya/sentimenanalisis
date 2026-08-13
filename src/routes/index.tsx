@@ -515,22 +515,22 @@ function LandingPage() {
           {[
             {
               label: "Accuracy",
-              val: 89.2,
+              val: 71.9,
               desc: "Persentase prediksi yang benar secara keseluruhan. Akurasi 89,2% artinya sekitar 178 dari 200 berita diklasifikasikan dengan benar.",
             },
             {
               label: "Precision",
-              val: 87.4,
+              val: 72.8,
               desc: "Seberapa yakin terhadap hasil positif yang diprediksi. Precision 87,4% berarti peluang benar saat model menyatakan positif mencapai 87,4%.",
             },
             {
               label: "Recall",
-              val: 86.1,
+              val: 71.9,
               desc: "Kemampuan model menemukan seluruh berita yang seharusnya masuk suatu kelas. Recall 86,1% berarti 86,1% kasus relevan berhasil tertangkap.",
             },
             {
               label: "F1-Score",
-              val: 86.7,
+              val: 72.2,
               desc: "Rata-rata harmonis Precision dan Recall. F1-Score 86,7% menunjukkan keseimbangan baik antara prediksi tepat dan menemukan kasus relevan.",
             },
           ].map((m) => (
