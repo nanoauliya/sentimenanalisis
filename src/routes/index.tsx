@@ -516,23 +516,23 @@ function LandingPage() {
           {[
             {
               label: "Accuracy",
-              val: 89.2,
-              desc: "Persentase prediksi yang benar secara keseluruhan. Akurasi 89,2% artinya sekitar 178 dari 200 berita diklasifikasikan dengan benar.",
+              val: 71.9,
+              desc: "Persentase prediksi yang benar secara keseluruhan. Akurasi 71,9% artinya sekitar 178 dari 200 berita diklasifikasikan dengan benar.",
             },
             {
               label: "Precision",
-              val: 87.4,
-              desc: "Seberapa yakin terhadap hasil positif yang diprediksi. Precision 87,4% berarti peluang benar saat model menyatakan positif mencapai 87,4%.",
+              val: 72.8,
+              desc: "Seberapa yakin terhadap hasil positif yang diprediksi. Precision 72,8% berarti peluang benar saat model menyatakan positif mencapai 72,8%.",
             },
             {
               label: "Recall",
-              val: 86.1,
-              desc: "Kemampuan model menemukan seluruh berita yang seharusnya masuk suatu kelas. Recall 86,1% berarti 86,1% kasus relevan berhasil tertangkap.",
+              val: 71.9,
+              desc: "Kemampuan model menemukan seluruh berita yang seharusnya masuk suatu kelas. Recall 71,9% berarti 71,9% kasus relevan berhasil tertangkap.",
             },
             {
               label: "F1-Score",
-              val: 86.7,
-              desc: "Rata-rata harmonis Precision dan Recall. F1-Score 86,7% menunjukkan keseimbangan baik antara prediksi tepat dan menemukan kasus relevan.",
+              val: 72.2,
+              desc: "Rata-rata harmonis Precision dan Recall. F1-Score 72,2% menunjukkan keseimbangan baik antara prediksi tepat dan menemukan kasus relevan.",
             },
           ].map((m) => (
             <MetricCard key={m.label} label={m.label} val={m.val} desc={m.desc} />
@@ -543,7 +543,7 @@ function LandingPage() {
           <div className="rounded-2xl bg-background p-6 ring-1 ring-border lg:col-span-3">
             <h3 className="text-base font-bold">Confusion Matrix</h3>
             <p className="mt-1 text-xs text-muted-foreground">
-              Model: IndoBERT fine-tuned · sampel: 200 berita.
+              Model: SVM · sampel: 1850 berita.
             </p>
             <div className="mt-5 overflow-hidden rounded-xl ring-1 ring-border">
               <table className="w-full text-sm">
