@@ -557,9 +557,9 @@ function LandingPage() {
                 </thead>
                 <tbody>
                   {[
-                    { label: "Aktual: Positif", vals: [58, 4, 6] },
-                    { label: "Aktual: Negatif", vals: [3, 82, 7] },
-                    { label: "Aktual: Netral", vals: [5, 6, 29] },
+                    { label: "Aktual: Positif", vals: [135, 12, 30] },
+                    { label: "Aktual: Negatif", vals: [8, 69, 18] },
+                    { label: "Aktual: Netral", vals: [20, 16, 62] },
                   ].map((r, i) => (
                     <tr key={r.label} className="border-t border-border">
                       <td className="bg-secondary/30 p-3 font-semibold">{r.label}</td>
