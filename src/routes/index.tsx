@@ -641,7 +641,7 @@ function LandingPage() {
             },
             {
               q: "Seberapa akurat hasil klasifikasi sentimennya?",
-              a: "Berdasarkan pengujian pada data uji, model mencapai akurasi sekitar 78% dengan performa yang relatif seimbang pada setiap kelas sentimen. Detail metrik evaluasi dan confusion matrix tersedia pada tab Validasi Model untuk membantu melihat performa model secara lebih menyeluruh.",
+              a: "Berdasarkan pengujian pada data uji, model mencapai akurasi sekitar 71.9% dengan performa yang relatif seimbang pada setiap kelas sentimen. Detail metrik evaluasi dan confusion matrix tersedia pada tab Validasi Model untuk membantu melihat performa model secara lebih menyeluruh.",
             },
             {
               q: "Apakah hasil analisis dapat diekspor?",
