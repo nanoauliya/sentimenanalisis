@@ -594,12 +594,12 @@ function LandingPage() {
               </li>
               <li>
                 Angka berlatar biru (diagonal) adalah prediksi{" "}
-                <b className="text-foreground">benar</b>. Contoh: 58 berita positif dikenali sebagai
+                <b className="text-foreground">benar</b>. Contoh: 135 berita positif dikenali sebagai
                 positif.
               </li>
               <li>
                 Angka di luar diagonal adalah{" "}
-                <b className="text-foreground">kesalahan klasifikasi</b>, misalnya 7 berita negatif
+                <b className="text-foreground">kesalahan klasifikasi</b>, misalnya 18 berita negatif
                 diprediksi netral.
               </li>
               <li>
